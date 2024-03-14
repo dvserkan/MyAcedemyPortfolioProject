@@ -1,0 +1,101 @@
+﻿@using MyAcedemyPortfolioProject.Models.Entity
+@model List<TblExperiences>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h2>Experiences List</h2>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 10px">ID</th>
+                                                <th>Start Year</th>
+                                                <th>End Year</th>
+                                                <th>Title</th>
+                                                <th>Description</th>
+                                                <th>Company Name</th>
+                                                <th>Locaiton</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var x in Model)
+                                            {
+                                                <tr>
+                                                    <td>@x.ExperienceID</td>
+                                                    <td>@x.StartYear</td>
+                                                    <td>@x.EndYear</td>
+                                                    <td>@x.Title</td>
+                                                    <td>@x.Description</td>
+                                                    <td>@x.CompanyName</td>
+                                                    <td>@x.Location</td>
+                                                    <td class="text-center">
+                                                        <a href="/Experiences/ExperiencesRemove/@x.ExperienceID" class="btn btn-danger" style="margin-right: 15px">Delete</a>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <a href="/Experiences/ExperiencesGet/@x.ExperienceID" class="btn btn-warning" style="margin-right: 15px">Update</a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#Modal1">New Expericense Add</button>
+        @*PENCERE*@
+        <div class="modal" id="Modal1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title">New Experience Add Page</h2>
+                    </div>
+                    <form method="post" action="/Experiences/ExperiencesAdd">
+                        <div class="modal-body">
+                            <label>Start Year</label>
+                            <input type="text" name="StartYear" class="form-control" />
+                            <br />
+                            <label>End Year</label>
+                            <input type="text" name="EndYear" class="form-control" />
+                            <br />
+                            <label>Title</label>
+                            <input type="text" name="Title" class="form-control" />
+                            <br />
+                            <label>Description</label>
+                            <input type="text" name="Description" class="form-control" />
+                            <br />
+                            <label>CompanyName</label>
+                            <input type="text" name="CompanyName" class="form-control" />
+                            <br />
+                            <label>Location</label>
+                            <input type="text" name="Location" class="form-control" />
+                            <br />
+                            <button class="btn btn-success" style="margin-left:25%; width:50%">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

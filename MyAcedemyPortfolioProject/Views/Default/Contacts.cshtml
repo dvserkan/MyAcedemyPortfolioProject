@@ -1,0 +1,23 @@
+﻿@using MyAcedemyPortfolioProject.Models.Entity
+@model List<TblContacts>
+
+
+<div class="container-fluid">
+    <div class="container">
+        <div class="footer-info">
+            @foreach (var x in Model)
+            {
+                <h2>@x.NameSurname</h2>
+                <h3>@x.Adress</h3>
+                <div class="footer-menu">
+                    <p>@x.Phone</p>
+                    <p>@x.Email</p>
+                </div>
+            }
+            @Html.Action("SocialMedias")
+        </div>
+    </div>
+    <div class="container copyright">
+        <p>&copy; <a href="#">Bu Site Serkan Çakır Tarafından Yazılmıştır.</a></p>
+    </div>
+</div>

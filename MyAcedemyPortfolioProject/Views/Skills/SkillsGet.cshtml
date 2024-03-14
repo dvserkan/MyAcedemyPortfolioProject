@@ -1,0 +1,22 @@
+﻿@model MyAcedemyPortfolioProject.Models.Entity.TblSkills
+@{
+    ViewBag.Title = "SkillsGet";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Edit Skill Page</h4>
+<br />
+<form method="post">
+    @Html.Label("ID", new { style = "visibility:hidden" })
+    @Html.TextBoxFor(x => x.SkillID, new { @class = "form-control", style = "visibility:hidden" })
+    <br />
+    @Html.Label("Skill Name")
+    @Html.TextBoxFor(x => x.SkillName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Value")
+    @Html.TextBoxFor(x => x.Value, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Save</button>
+</form>
+

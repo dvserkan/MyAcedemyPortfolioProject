@@ -1,0 +1,33 @@
+﻿@using MyAcedemyPortfolioProject.Models.Entity
+@model List<TblTeams>
+
+<div class="container">
+    <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+        <p>Yazılım</p>
+        <h2>Eğitmenlerim</h2>
+    </div>
+    <div class="row">
+        @foreach (var x in Model)
+        {
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
+
+                <div class="team-item">
+                    <div class="team-img">
+                        <img src="@x.ImageUrl" alt="Image">
+                    </div>
+                    <div class="team-text">
+                        <h2>@x.NameSurname</h2>
+                        <h4>@x.Title</h4>
+                        <p>
+                            @x.Description
+                        </p>
+                        <div class="team-social">
+                            <a class="btn" href="@x.LinkedinUrl" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        }
+    </div>
+</div>

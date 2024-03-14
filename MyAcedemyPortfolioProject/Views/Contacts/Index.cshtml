@@ -1,0 +1,93 @@
+﻿@using MyAcedemyPortfolioProject.Models.Entity
+@model List<TblContacts>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h2>Contacts List</h2>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 10px">ID</th>
+                                                <th>Name Surname</th>
+                                                <th>Adres</th>
+                                                <th>Phone</th>
+                                                <th>Email</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var x in Model)
+                                            {
+                                                <tr>
+                                                    <td>@x.ContactID</td>
+                                                    <td>@x.NameSurname</td>
+                                                    <td>@x.Adress</td>
+                                                    <td>@x.Phone</td>
+                                                    <td>@x.Email</td>
+                                                    <td class="text-center">
+                                                        <a href="/Contacts/ContactsRemove/@x.ContactID" class="btn btn-danger" style="margin-right: 15px">Delete</a>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <a href="/Contacts/ContactsGet/@x.ContactID" class="btn btn-warning" style="margin-right: 15px">Update</a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#Modal1">New Contact Add</button>
+        @*PENCERE*@
+        <div class="modal" id="Modal1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title">New Contact Add Page</h2>
+                    </div>
+                    <form method="post" action="/Contacts/ContactsAdd">
+                        <div class="modal-body">
+                            <label>Name Surname</label>
+                            <input type="text" name="NameSurname" class="form-control" />
+                            <br />
+                            <label>Adres</label>
+                            <input type="text" name="Adress" class="form-control" />
+                            <br />
+                            <label>Phone</label>
+                            <input type="text" name="Phone" class="form-control" />
+                            <br />
+                            <label>E-Mail</label>
+                            <input type="text" name="Email" class="form-control" />
+                            <br />
+                            <button class="btn btn-success" style="margin-left:25%; width:50%">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

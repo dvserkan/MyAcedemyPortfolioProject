@@ -1,0 +1,24 @@
+﻿@model MyAcedemyPortfolioProject.Models.Entity.TblFeatures
+@{
+    ViewBag.Title = "FeaturesGet";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Edit Feature Page</h4>
+<br />
+<form method="post">
+    @Html.Label("ID" , new {style = "visibility:hidden" })
+    @Html.TextBoxFor(x => x.FeatureID, new { @class = "form-control" , style = "visibility:hidden" })
+    <br />
+    @Html.Label("Name - Surname")
+    @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+    <br />
+    @Html.Label("Title")
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+    @Html.Label("Image URL")
+    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Save</button>
+</form>

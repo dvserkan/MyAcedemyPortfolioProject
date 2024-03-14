@@ -1,0 +1,32 @@
+﻿@using MyAcedemyPortfolioProject.Models.Entity
+@model List<TblFeatures>
+
+
+<div class="hero" id="home">
+    @foreach (var x in Model)
+    {
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-sm-12 col-md-6">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <p>Merhabalar Ben ;</p>
+                            <h1>@x.NameSurname</h1>
+                            <h2></h2>
+                            <div class="typed-text">@x.Title</div>
+                        </div>
+                        <div class="hero-btn">
+                            <a class="btn" href="">İş Teklifinde Bulun</a>
+                            <a class="btn" href="#contact">Bana Ulaşın</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 d-none d-md-block">
+                    <div class="hero-image">
+                        <img style="width:70%;" class="img-fluid img-profile rounded-circle mx-auto mb-2" src="@x.ImageUrl" alt="Hero Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,25 @@
+﻿@using MyAcedemyPortfolioProject.Models.Entity
+@model List<TblProjects>
+<div class="container">
+    <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+        <p>Projelerim</p>
+        <h2>Mevcut Proje Örnekleri</h2>
+    </div>
+  @Html.Action("Category")
+<div class="row portfolio-container">
+    @foreach (var x in Model)
+    {
+        <div style="margin-top:30px;" class="col-lg-5 col-md-4 col-sm-4 portfolio-item @x.CategoryID wow fadeInUp" data-wow-delay="0.0s">
+            <div class="portfolio-wrap">
+                <div class="portfolio-img">
+                    <img src="@x.ImageUrl" alt="Image">
+                </div>
+                <div class="portfolio-text">
+                    <h3>@x.ProjectName</h3>
+                    <a class="btn" href="@x.ImageUrl" data-lightbox="portfolio">+</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+</div>

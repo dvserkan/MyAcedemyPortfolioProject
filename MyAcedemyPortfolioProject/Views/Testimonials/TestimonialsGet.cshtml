@@ -1,0 +1,35 @@
+﻿@model MyAcedemyPortfolioProject.Models.Entity.TblTestimonials
+
+    @{
+        ViewBag.Title = "TestimonialsGet";
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    }
+
+    <br />
+    <h4>Edit Testimonials Page</h4>
+    <br />
+    <form method="post">
+        @Html.Label("ID", new { style = "visibility:hidden" })
+        @Html.TextBoxFor(x => x.TestimonialID, new { @class = "form-control", style = "visibility:hidden" })
+        <br />
+        @Html.Label("Image URL")
+        @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+        <br />
+        @Html.Label("Comment")
+        @Html.TextBoxFor(x => x.Comment, new { @class = "form-control" })
+        <br />
+        @Html.Label("Name Surname")
+        @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+        <br />
+        @Html.Label("Title")
+        @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+        <br />
+        @Html.Label("Status")
+        @Html.TextBoxFor(x => x.Status, new { @class = "form-control" })
+        <br />
+        @Html.Label("CommenDate")
+        @Html.TextBoxFor(x => x.CommentDate, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-success">Save</button>
+    </form>
+

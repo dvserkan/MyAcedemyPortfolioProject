@@ -1,0 +1,28 @@
+﻿@using MyAcedemyPortfolioProject.Models.Entity
+@model List<TblTestimonials>
+
+
+<div class="container">
+    <div class="testimonial-icon">
+        <i class="fa fa-quote-left"></i>
+    </div>
+    <div class="owl-carousel testimonials-carousel">
+        @foreach (var x in Model)
+        {
+            <div class="testimonial-item">
+                <div class="testimonial-img">
+                    <img src="@x.ImageUrl" alt="Image">
+                </div>
+                <div class="testimonial-text">
+                    <p>
+                        @x.Comment
+                    </p>
+                    <h3>@x.NameSurname</h3>
+                    <h4>@x.Title</h4>
+                    <br />
+                    <h5>@(((DateTime)x.CommentDate).ToString("dd-MMM-yyyy"))</h5>
+                </div>
+            </div>
+        }
+    </div>
+</div>

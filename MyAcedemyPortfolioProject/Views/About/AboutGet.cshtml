@@ -1,0 +1,25 @@
+﻿@model MyAcedemyPortfolioProject.Models.Entity.TblAbouts
+@{
+    ViewBag.Title = "AboutGet";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Edit About Page</h4>
+<br />
+<form method="post">
+    @Html.Label("ID", new { style = "visibility:hidden" })
+    @Html.TextBoxFor(x => x.AboutID, new { @class = "form-control", style = "visibility:hidden" })
+    <br />
+    @Html.Label("Image URL")
+    @Html.TextBoxFor(x => x.ImageURL, new { @class = "form-control" })
+    <br />
+    @Html.Label("Title")
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+    @Html.Label("Description")
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Save</button>
+</form>
+

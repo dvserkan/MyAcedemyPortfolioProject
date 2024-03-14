@@ -1,0 +1,27 @@
+﻿@model MyAcedemyPortfolioProject.Models.Entity.TblContacts
+@{
+    ViewBag.Title = "ContactsGet";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Edit Contacts Page</h4>
+<br />
+<form method="post">
+    @Html.Label("ID", new { style = "visibility:hidden" })
+    @Html.TextBoxFor(x => x.ContactID, new { @class = "form-control", style = "visibility:hidden" })
+    <br />
+    @Html.Label("Name Surname")
+    @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+    <br />
+    @Html.Label("Adress")
+    @Html.TextBoxFor(x => x.Adress, new { @class = "form-control" })
+    <br />
+    @Html.Label("Phone")
+    @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+    <br />
+    @Html.Label("E-mail")
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Save</button>
+</form>

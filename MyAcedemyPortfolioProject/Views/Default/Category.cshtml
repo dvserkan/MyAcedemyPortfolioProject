@@ -1,0 +1,15 @@
+﻿@using MyAcedemyPortfolioProject.Models.Entity
+@model List<TblCategories>
+
+<div class="row">
+    <div class="col-12">
+        <ul id="portfolio-filter">
+            <li data-filter="*" class="filter-active">Hepsi</li>
+            @foreach (var x in Model)
+            {
+                <li data-filter=".@x.CategoryID">@x.CategoryName</li>
+            }
+
+        </ul>
+    </div>
+</div>

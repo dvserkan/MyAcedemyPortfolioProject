@@ -1,0 +1,9 @@
+﻿@using MyAcedemyPortfolioProject.Models.Entity
+@model List<TblSocialMedias>
+
+<div class="footer-social">
+    @foreach (var x in Model)
+    {
+        <a href="@x.Url" target="_blank"><i class="@x.Icon"></i></a>
+    }
+</div>

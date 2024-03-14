@@ -1,0 +1,119 @@
+﻿
+@{
+    ViewBag.Title = "_MainLayout";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>DevFolio - Serkan Çakır</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free Website Template" name="keywords">
+    <meta content="Free Website Template" name="description">
+
+    <!-- Favicon -->
+    <link href="/devfolio2-main/img/favicon.ico" rel="icon">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Libraries -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="/devfolio2-main/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/devfolio2-main/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/devfolio2-main/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="/devfolio2-main/css/style.css" rel="stylesheet">
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="51">
+    <!-- Nav Bar Start -->
+    @*navbar navbar-expand-lg bg-light navbar-light*@
+    <div class="navbar navbar-expand-lg bg-light navbar-light">
+        <div class="container-fluid">
+            <a href="/Default/Index" class="navbar-brand">PORTFOLIO</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div style="margin-left:220px;" class="navbar-nav me-lg-3">
+                    <a href="#home" class="nav-item nav-link active">Giriş</a>
+                    <a href="#about" class="nav-item nav-link">Hakkında</a>
+                    <a href="#service" class="nav-item nav-link">Hizmet</a>
+                    <a href="#experience" class="nav-item nav-link">Deneyim</a>
+                    <a href="#portfolio" class="nav-item nav-link">Portföy</a>
+                    <a href="#team" class="nav-item nav-link">Team</a>
+                    <a href="#contact" class="nav-item nav-link">Mesaj</a>
+                </div>
+            </div>
+        </div>
+        <div><button class="btn btn-outline"><a href="/Login/Index" target="_blank" title="Admin Paneline Git" class="text-white">Admin Paneli Giriş</a></button></div>
+
+    </div>
+    <!-- Features Start -->
+    <div class="hero" id="home">
+        @Html.Action("Features")
+    </div>
+    <!-- Skills Start -->
+    <div class="about wow fadeInUp" data-wow-delay="0.1s" id="about">
+        @Html.Action("Skills")
+    </div>
+    <!-- Service Start -->
+    <div class="service" id="service">
+        @Html.Action("Services")
+    </div>
+    <!-- Experience Start -->
+    <div class="experience" id="experience">
+        @Html.Action("Experiences")
+    </div>
+    <!-- Portfolio Start -->
+    <div class="portfolio" id="portfolio">
+        @Html.Action("Project")
+    </div>
+    <!-- Testimonial Start -->
+    <div class="testimonial wow fadeInUp" data-wow-delay="0.1s" id="review">
+        @Html.Action("TestiMonials")
+    </div>
+    <!-- Team Start -->
+    <div class="team" id="team">
+        @Html.Action("Teams")
+    </div>
+    <!-- Message Start -->
+    <div class="contact wow fadeInUp" data-wow-delay="0.1s" id="contact">
+        @Html.Action("Message")
+    </div>
+    <!-- Contact Start -->
+    <div class="footer wow fadeIn" data-wow-delay="0.3s">
+        @Html.Action("Contacts")
+    </div>
+    <!-- Back to top button -->
+    <a href="#" class="btn back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <!-- Pre Loader -->
+    <div id="loader" class="show">
+        <div class="loader"></div>
+        @RenderBody()
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="/devfolio2-main/lib/easing/easing.min.js"></script>
+    <script src="/devfolio2-main/lib/wow/wow.min.js"></script>
+    <script src="/devfolio2-main/lib/waypoints/waypoints.min.js"></script>
+    <script src="/devfolio2-main/lib/typed/typed.min.js"></script>
+    <script src="/devfolio2-main/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/devfolio2-main/lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="/devfolio2-main/lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="/devfolio2-main/mail/jqBootstrapValidation.min.js"></script>
+    <script src="/devfolio2-main/mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="/devfolio2-main/js/main.js"></script>
+</body>
+</html>

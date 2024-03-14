@@ -1,0 +1,34 @@
+﻿@model MyAcedemyPortfolioProject.Models.Entity.TblExperiences
+@{
+    ViewBag.Title = "ExperiencesGet";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Edit Experiences Page</h4>
+<br />
+<form method="post">
+    @Html.Label("ID", new { style = "visibility:hidden" })
+    @Html.TextBoxFor(x => x.ExperienceID, new { @class = "form-control", style = "visibility:hidden" })
+    <br />
+    @Html.Label("Start Year")
+    @Html.TextBoxFor(x => x.StartYear, new { @class = "form-control" })
+    <br />
+    @Html.Label("End Year")
+    @Html.TextBoxFor(x => x.EndYear, new { @class = "form-control" })
+    <br />
+    @Html.Label("Title")
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+    @Html.Label("Description")
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    @Html.Label("CompanyName")
+    @Html.TextBoxFor(x => x.CompanyName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Location")
+    @Html.TextBoxFor(x => x.Location, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Save</button>
+</form>
+

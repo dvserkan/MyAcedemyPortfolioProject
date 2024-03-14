@@ -1,0 +1,28 @@
+﻿@model MyAcedemyPortfolioProject.Models.Entity.TblProjects
+@{
+    ViewBag.Title = "ProjectsGet";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Edit Project Page</h4>
+<br />
+<form method="post">
+    @Html.Label("ID", new { style = "visibility:hidden" })
+    @Html.TextBoxFor(x => x.ProjectID, new { @class = "form-control", style = "visibility:hidden" })
+    <br />
+    @Html.Label("Image URL")
+    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+    <br />
+    @Html.Label("Project Name")
+    @Html.TextBoxFor(x => x.ProjectName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Category")
+    @Html.TextBoxFor(x => x.TblCategories.CategoryName, new { @class = "form-control" })
+    <br />
+    @Html.Label("GitHub URL")
+    @Html.TextBoxFor(x => x.GithubUrl, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Save</button>
+</form>
+

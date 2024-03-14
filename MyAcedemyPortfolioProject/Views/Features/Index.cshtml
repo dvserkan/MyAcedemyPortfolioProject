@@ -1,0 +1,85 @@
+﻿@using MyAcedemyPortfolioProject.Models.Entity
+@model List<TblFeatures>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h2>Feature List</h2>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 10px">ID</th>
+                                                <th>Name Surname</th>
+                                                <th>Title</th>
+                                                <th>ImageUrl</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var x in Model)
+                                            {
+                                                <tr>
+                                                    <td>@x.FeatureID</td>
+                                                    <td>@x.NameSurname</td>
+                                                    <td>@x.Title</td>
+                                                    <td>@x.ImageUrl</td>
+                                                    <td class="text-center">
+                                                        <a href="/Features/FeaturesRemove/@x.FeatureID" class="btn btn-danger" style="margin-right: 15px">Delete</a>
+                                                        <a href="/Features/FeaturesGet/@x.FeatureID" class="btn btn-warning" style="margin-right: 15px">Update</a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#Modal1">New Feature Add</button>
+        @*PENCERE*@
+        <div class="modal" id="Modal1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title">New Feature Add Page</h2>
+                    </div>
+                    <form method="post" action="/Features/FeaturesAdd">
+                        <div class="modal-body">
+                            <label>Name Surname</label>
+                            <input type="text" name="NameSurname" class="form-control" />
+                            <br />
+                            <label>Title</label>
+                            <input type="text" name="Title" class="form-control" />
+                            <br />
+                            <label>Image URL</label>
+                            <input type="text" name="ImageUrl" class="form-control" />
+                            <br />
+                            <button class="btn btn-success" style="margin-left:25%; width:50%">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

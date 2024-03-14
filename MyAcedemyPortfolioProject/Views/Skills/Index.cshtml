@@ -1,0 +1,98 @@
+﻿@using MyAcedemyPortfolioProject.Models.Entity
+@model List<TblSkills>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@{string renk = ""; }
+
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>Skill List</h2>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10px">ID</th>
+                                            <th>Skill Name</th>
+                                            <th>Value</th>
+                                            <th style="width: 40px">Percent</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var x in Model)
+                                        {
+                                            if (x.Value >= 0 && x.Value <= 50)
+                                            {
+                                                renk = "progress-bar bg-danger";
+                                            }
+                                            if (x.Value >= 51 && x.Value <= 70)
+                                            {
+                                                renk = "progress-bar bg-warning";
+                                            }
+                                            if (x.Value >= 71 && x.Value <= 84)
+                                            {
+                                                renk = "progress-bar bg-primary";
+                                            }
+                                            if (x.Value >= 85 && x.Value <= 100)
+                                            {
+                                                renk = "progress-bar bg-success";
+                                            }
+                                            <tr>
+                                                <td>@x.SkillID</td>
+                                                <td>@x.SkillName</td>
+                                                <td>
+                                                    <div class="progress progress-xs">
+                                                        <div class="@renk" style="width: @x.Value%"></div>
+                                                    </div>
+                                                </td>
+                                                <td><span class="@renk">@x.Value%</span></td>
+                                                <td class="text-center"><a href="/Skills/SkillsRemove/@x.SkillID" class="btn btn-danger" style="margin-right:15px">Delete</a><a href="/Skills/SkillsGet/@x.SkillID" class="btn btn-warning">Update</a></td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#Modal1">New Skill Add</button>
+        @*PENCERE*@
+        <div class="modal" id="Modal1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title">New Skill Add Page</h2>
+                    </div>
+                    <form method="post" action="/Skills/SkillsAdd">
+                        <div class="modal-body">
+                            <label>Skill Name</label>
+                            <input type="text" name="SkillName" class="form-control" />
+                            <br />
+                            <label>Value</label>
+                            <input type="text" name="Value" class="form-control" />
+                            <br />
+                            <button class="btn btn-success" style="margin-left:25%; width:50%">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
+

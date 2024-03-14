@@ -1,0 +1,39 @@
+﻿@using MyAcedemyPortfolioProject.Models.Entity
+@model List<TblSkills>
+
+
+<div class="container-fluid">
+    <div class="row align-items-center">
+        <div class="col-lg-6">
+            <div class="about-img">
+                <img src="https://i.hizliresim.com/qp37ke8.jpeg" alt="Image">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="about-content">
+                <div class="section-header text-left">
+                    
+                    <p style="margin-top:60px;">Yeteneklerim</p>
+                    <h2>5 Yıl Kurumsal Deneyim</h2>
+                </div>
+                <div class="about-text">
+                    <p>
+                        Yazılım sektöründe müşteri memnuniyeti sağlamak ve sadık müşterilere sahip olmak uzun vadede ayakta kalmayı ve büyümeyi beraberinde getirir. Bu strateji ile müşterilerimize olan yaklaşımınız, onlarla olan iletişimimiz ve onların sorunlarını nasıl çözeceğimizle ilgili hazırlık yapmaktayız.
+                    </p>
+                </div>
+                @foreach (var x in Model)
+                {
+                    <div class="skills">
+                        <div class="skill-name">
+                            <p>@x.SkillName</p><p>@x.Value%</p>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="@x.Value" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                }
+                <a class="btn" href="#contact">Daha Fazla Bilgi İçin</a>
+            </div>
+        </div>
+    </div>
+</div>

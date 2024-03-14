@@ -1,0 +1,39 @@
+﻿@model MyAcedemyPortfolioProject.Models.Entity.TblTeams
+@{
+    ViewBag.Title = "TeamsGet";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Edit Team Page</h4>
+<br />
+<form method="post">
+    @Html.Label("ID", new { style = "visibility:hidden" })
+    @Html.TextBoxFor(x => x.TeamID, new { @class = "form-control", style = "visibility:hidden" })
+    <br />
+    @Html.Label("Image URL")
+    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+    <br />
+    @Html.Label("Name Surname")
+    @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+    <br />
+    @Html.Label("Title")
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+    @Html.Label("Description")
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    @Html.Label("Twitter Url")
+    @Html.TextBoxFor(x => x.TwitterUrl, new { @class = "form-control" })
+    <br />
+    @Html.Label("Facebook Url")
+    @Html.TextBoxFor(x => x.FacebookUrl, new { @class = "form-control" })
+    <br />
+    @Html.Label("Linkedin Url")
+    @Html.TextBoxFor(x => x.LinkedinUrl, new { @class = "form-control" })
+    <br />
+    @Html.Label("Instagram Url")
+    @Html.TextBoxFor(x => x.InstagramUrl, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Save</button>
+</form>

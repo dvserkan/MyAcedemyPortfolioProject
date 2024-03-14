@@ -1,0 +1,30 @@
+﻿@using MyAcedemyPortfolioProject.Models.Entity
+@model List<TblServices>
+
+
+<div class="container">
+    <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+        <p>Neler Yapabilirim</p>
+        <h2>Kurumsal Hizmetlerim</h2>
+    </div>
+    <div class="row">
+        @foreach (var x in Model)
+        {
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
+
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="@x.Icon"></i>
+                    </div>
+                    <div class="service-text">
+                        <h3>@x.Title</h3>
+                        <p>
+                            @x.Description
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        }
+    </div>
+</div>

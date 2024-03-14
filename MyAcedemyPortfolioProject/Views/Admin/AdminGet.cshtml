@@ -1,0 +1,19 @@
+﻿@model MyAcedemyPortfolioProject.Models.Entity.TblLogin
+@{
+    ViewBag.Title = "AdminGet";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Edit Admin Page</h4>
+<br />
+<form method="post">
+    @Html.Label("User Name")
+    @Html.TextBoxFor(x => x.Username, new { @class = "form-control" })
+    <br />
+    @Html.Label("Password")
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Save</button>
+</form>
+
