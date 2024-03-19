@@ -2596,6 +2596,7 @@
     <Content Include="Views\Testimonials\TestimonialsGet.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\AdminGet.cshtml" />
+    <Content Include="Views\Projects\ProjectCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

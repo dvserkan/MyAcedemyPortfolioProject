@@ -60,32 +60,7 @@
         </section>
         <button class="btn btn-primary" data-toggle="modal" data-target="#Modal1">New Project Add</button>
         @*PENCERE*@
-        <div class="modal" id="Modal1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h2 class="modal-title">New Project Add Page</h2>
-                    </div>
-                    <form method="post" action="/Projects/ProjectsAdd">
-                        <div class="modal-body">
-                            <label>Image Url</label>
-                            <input type="text" name="ImageURL" class="form-control" />
-                            <br />
-                            <label>Project Name</label>
-                            <input type="text" name="ProjectName" class="form-control" />
-                            <br />
-                            <label>Category</label>
-                            <input type="text" name="CategoryID" class="form-control" />
-                            <br />
-                            <label>Github URL</label>
-                            <input type="text" name="GithubUrl" class="form-control" />
-                            <br />
-                            <button class="btn btn-success" style="margin-left:25%; width:50%">Save</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+     @Html.Action("ProjectCategory")
     </div>
 </body>
 </html>

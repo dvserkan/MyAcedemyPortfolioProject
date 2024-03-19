@@ -18,7 +18,7 @@
     @Html.TextBoxFor(x => x.ProjectName, new { @class = "form-control" })
     <br />
     @Html.Label("Category")
-    @Html.TextBoxFor(x => x.TblCategories.CategoryName, new { @class = "form-control" })
+    @Html.DropDownListFor(x=> x.CategoryID , (List<SelectListItem>)ViewBag.ctl , new { @class="form-control"} )
     <br />
     @Html.Label("GitHub URL")
     @Html.TextBoxFor(x => x.GithubUrl, new { @class = "form-control" })
